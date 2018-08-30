@@ -1,22 +1,48 @@
-# Gesture_PAJ7620
+PM2.5 Sensor(HM3300)
+=======================================
+  -- HM-3300 is a new generation of dust detection sensor based on laser theory introduced by our company, which is used for continuous and real-time detection of dust in the air.  
+---------------------------------------------
 
-<img src=https://statics3.seeedstudio.com/seeed/img/2016-08/5dxWtS1rxWLzukUaHBvGoIG9.jpg width=300><img src=https://statics3.seeedstudio.com/seeed/img/2016-08/3EmTCa2USbPnqZszQNngy8ss.jpg width=300>
-
-[Grove - Gesture（PAJ7620U2)](https://www.seeedstudio.com/s/Grove-Gesture（PAJ7620U2）-p-2463.html)
-
-**Description**
-
-The sensor on Grove - Gesture is PAJ7620U2 that integrates gesture recognition function with general I2C interface into a single chip. It can recognize 9 gestures including move up, move down, move left, move right, etc with a simple swipe of your hand.
-For more information please visit the [wiki](http://wiki.seeedstudio.com/Grove-Gesture_v1.0/).
+![HM3300](https://github.com/Seeed-Studio/Grove-Ranging-sensor-VL53L0X/blob/master/VL530XL_module.png)  
 
 
----
-This software is written by Jack Wu for seeed studio<br>
-and is licensed under [The MIT License](http://opensource.org/licenses/mit-license.php). Check LICENSE for more information.<br>
+
+
+Introduction:  
+------------------------  
+>The HM-3300 is applicable to products and application fields such as dust detector, intelligent air purifier, intelligent air conditioner, intelligent ventilation fan, air quality detection, haze table, environment monitoring, etc.  
+
+***
+
+Usage: 
+========== 
+>1.  Download all the source files and open one of example,compile,upload,and running.Open the corresponding Serial Port to watch the result.
+>2.  Example: open the file examples/basic_demo/basic_demo.ino.This is the three-way test, which can measure the concentration content of three levels :PM1.0,PM2.5,PM10. 
+
+Notice:
+----------
+>*  The sensor metal housing should not be short-circuited with other external panel circuits or product housing because the sensor housing is conducting with the internal power source.
+>*  When applying with purifier or fixed detection equipment, the position of sensor should be higher than 20cm above the ground.Otherwise, it is likely to be polluted by large dust particles or even floccules near the ground, resulting in the winding resistance of the fan.Refer to doc/HM-3300&3600datasheet.doc to get more detail.
+
+
+***
+reference:
+============
+>Datasheet:refer to **doc/HM-3300&3600datasheet.doc**  
+
+
+***
+This software is written by downey  for seeed studio<br>
+Email:dao.huang@seeed.cc
+and is licensed under [The MIT License](http://opensource.org/licenses/mit-license.php). Check License.txt for more information.<br>
 
 Contributing to this software is warmly welcomed. You can do this basically by<br>
 [forking](https://help.github.com/articles/fork-a-repo), committing modifications and then [pulling requests](https://help.github.com/articles/using-pull-requests) (follow the links above<br>
 for operating guide). Adding change log and your contact into file header is encouraged.<br>
 Thanks for your contribution.
 
-Seeed is a hardware innovation platform for makers to grow inspirations into differentiating products. By working closely with technology providers of all scale, Seeed provides accessible technologies with quality, speed and supply chain knowledge. When prototypes are ready to iterate, Seeed helps productize 1 to 1,000 pcs using in-house engineering, supply chain management and agile manufacture forces. Seeed also team up with incubators, Chinese tech ecosystem, investors and distribution channels to portal Maker startups beyond.
+Seeed Studio is an open hardware facilitation company based in Shenzhen, China. <br>
+Benefiting from local manufacture power and convenient global logistic system, <br>
+we integrate resources to serve new era of innovation. Seeed also works with <br>
+global distributors and partners to push open hardware movement.<br>
+
