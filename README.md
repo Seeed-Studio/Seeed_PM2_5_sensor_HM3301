@@ -3,7 +3,7 @@ PM2.5 Sensor(HM3300)
   -- HM-3300 is a new generation of dust detection sensor based on laser theory introduced by our company, which is used for continuous and real-time detection of dust in the air.  
 ---------------------------------------------
 
-![HM3300](https://github.com/Seeed-Studio/Grove-Ranging-sensor-VL53L0X/blob/master/VL530XL_module.png)  
+![HM3300](https://github.com/Jenkinlu001/Seeed_PM2_5_sensor_HM3300/blob/master/HM3300.jpg)  
 
 
 
