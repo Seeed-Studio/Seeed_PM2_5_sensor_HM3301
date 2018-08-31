@@ -1,6 +1,6 @@
 /*
- * Seeed_MPR121_driver.cpp
- * Driver for DIGITAL I2C HUMIDITY AND TEMPERATURE SENSOR
+ * Seeed_HM330X.h
+ * Driver for Seeed PM2.5 Sensor(HM300)
  *  
  * Copyright (c) 2018 Seeed Technology Co., Ltd.
  * Website    : www.seeed.cc
