@@ -1,6 +1,6 @@
 PM2.5 Sensor(HM3301)
 =======================================
-  -- HM-3300 is a new generation of dust detection sensor based on laser theory introduced by our company, which is used for continuous and real-time detection of dust in the air.  
+  -- HM-3301 is a new generation of dust detection sensor based on laser theory introduced by our company, which is used for continuous and real-time detection of dust in the air.  
 ---------------------------------------------
 
 ![HM3300](https://github.com/Jenkinlu001/Seeed_PM2_5_sensor_HM3300/blob/master/HM3300.jpg)  
@@ -10,7 +10,7 @@ PM2.5 Sensor(HM3301)
 
 Introduction:  
 ------------------------  
->The HM-3300 is applicable to products and application fields such as dust detector, intelligent air purifier, intelligent air conditioner, intelligent ventilation fan, air quality detection, haze table, environment monitoring, etc.  
+>The HM-3301 is applicable to products and application fields such as dust detector, intelligent air purifier, intelligent air conditioner, intelligent ventilation fan, air quality detection, haze table, environment monitoring, etc.  
 
 ***
 
@@ -28,7 +28,7 @@ Notice:
 ***
 reference:
 ============
->Datasheet:refer to **doc/HM-3300&3600datasheet.doc**  
+>Datasheet:refer to **HM-3300&3600datasheet.doc**  
 
 
 ***
