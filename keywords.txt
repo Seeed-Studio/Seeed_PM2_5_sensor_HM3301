@@ -11,7 +11,7 @@
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-init  KEYWORD2
+init	KEYWORD2
 select_comm	KEYWORD2
 read_sensor_value	KEYWORD2
 
