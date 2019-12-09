@@ -43,6 +43,9 @@
                             return a;   \
                             }}while(0)
 
+#if defined(__AVR__)
+typedef long unsigned int u32;
+#endif
 typedef int s32;
 typedef unsigned char u8;
 typedef unsigned short u16;
