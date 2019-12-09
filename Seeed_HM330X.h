@@ -44,7 +44,6 @@
                             }}while(0)
 
 typedef int s32;
-typedef long unsigned int u32;
 typedef unsigned char u8;
 typedef unsigned short u16;
 
