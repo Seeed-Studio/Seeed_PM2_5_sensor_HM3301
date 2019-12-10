@@ -29,7 +29,7 @@
  * THE SOFTWARE.
  */
 
-#include "Seeed_HM330X.h"
+#include <Seeed_HM330X.h>
 
 #ifdef  ARDUINO_SAMD_VARIANT_COMPLIANCE
 #define SERIAL_OUTPUT SerialUSB
