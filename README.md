@@ -1,5 +1,7 @@
 # PM2.5 Sensor(HM3301)
 
+[![Build Status](https://travis-ci.org/freekode/Seeed_PM2_5_sensor_HM3301.svg?branch=master)](https://travis-ci.org/freekode/Seeed_PM2_5_sensor_HM3301)
+
 HM-3301 is a new generation of dust detection sensor based on laser theory introduced by our company, which is used for continuous and real-time detection of dust in the air.  
 
 ![HM3301](https://user-images.githubusercontent.com/41441945/44911054-11abd000-ad58-11e8-9b38-d2d504a86411.jpg)  
