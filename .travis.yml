@@ -7,4 +7,5 @@ install:
   - pip install -U platformio
 
 script:
-  - pio ci examples/basic_demo/basic_demo.ino -l ./ -c platformio.ini
+  - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board nodemcuv2
+  - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board nanoatmega328
