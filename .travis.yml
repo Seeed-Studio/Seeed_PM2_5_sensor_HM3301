@@ -9,3 +9,5 @@ install:
 script:
   - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board nodemcuv2
   - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board nanoatmega328
+  - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board nodemcu-32s
+  - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board d1_mini

@@ -32,7 +32,7 @@
 #include "Seeed_HM330X.h"
 
 
-HM330X::HM330X(u8 IIC_ADDR)
+HM330X::HM330X(uint8_t IIC_ADDR)
 {
     set_iic_addr(IIC_ADDR);
 }
@@ -51,9 +51,9 @@ HM330XErrorCode HM330X::init()
     return ret;
 }
 
-HM330XErrorCode HM330X::read_sensor_value(u8 *data,u32 data_len)
+HM330XErrorCode HM330X::read_sensor_value(uint8_t *data,uint32_t data_len)
 {
-    u32 time_out_count=0;
+    uint32_t time_out_count=0;
     HM330XErrorCode ret=NO_ERROR;
     Wire.requestFrom(0x40,29);
     while(data_len!=Wire.available())
@@ -91,9 +91,9 @@ HM330XErrorCode HM330X::read_sensor_value(u8 *data,u32 data_len)
  * @param byte :The byte to be wrote.
  * @return result of operation,non-zero if failed.
  */
-HM330XErrorCode IIC_OPRTS::IIC_write_byte(u8 reg,u8 byte)
+HM330XErrorCode IIC_OPRTS::IIC_write_byte(uint8_t reg,uint8_t byte)
 {
-    s32 ret=0;
+    int ret=0;
     Wire.beginTransmission(_IIC_ADDR);
     Wire.write(reg);
     Wire.write(byte);
@@ -111,14 +111,14 @@ HM330XErrorCode IIC_OPRTS::IIC_write_byte(u8 reg,u8 byte)
  * @param value: The 16bit value to be wrote .
  * @return result of operation,non-zero if failed.
  */
-HM330XErrorCode IIC_OPRTS::IIC_write_16bit(u8 reg,u16 value)
+HM330XErrorCode IIC_OPRTS::IIC_write_16bit(uint8_t reg,uint16_t value)
 {
-    s32 ret=0;
+    int ret=0;
     Wire.beginTransmission(_IIC_ADDR);
     Wire.write(reg);
 
-    Wire.write((u8)(value>>8));
-    Wire.write((u8)value);
+    Wire.write((uint8_t)(value>>8));
+    Wire.write((uint8_t)value);
     ret=Wire.endTransmission();
     if(!ret)
         return NO_ERROR;
@@ -134,14 +134,14 @@ HM330XErrorCode IIC_OPRTS::IIC_write_16bit(u8 reg,u16 value)
  * @param byte: The byte to be read in.
  * @return result of operation,non-zero if failed.
  */
-HM330XErrorCode IIC_OPRTS::IIC_read_byte(u8 reg,u8* byte)
+HM330XErrorCode IIC_OPRTS::IIC_read_byte(uint8_t reg,uint8_t* byte)
 {
-    u32 time_out_count=0;
+    uint32_t time_out_count=0;
     Wire.beginTransmission(_IIC_ADDR);
     Wire.write(reg);
     Wire.endTransmission(false);
 
-    Wire.requestFrom(_IIC_ADDR,(u8)1);
+    Wire.requestFrom(_IIC_ADDR,(uint8_t)1);
     while(1!=Wire.available())
     {
         time_out_count++;
@@ -158,24 +158,24 @@ HM330XErrorCode IIC_OPRTS::IIC_read_byte(u8 reg,u8* byte)
  * @param byte: The 16bit value to be read in.
  * @return result of operation,non-zero if failed.
  */
-HM330XErrorCode IIC_OPRTS::IIC_read_16bit(u8 start_reg,u16 *value)
+HM330XErrorCode IIC_OPRTS::IIC_read_16bit(uint8_t start_reg,uint16_t *value)
 {
-    u32 time_out_count=0;
-    u8 val=0;
+    uint32_t time_out_count=0;
+    uint8_t val=0;
     *value=0;
     Wire.beginTransmission(_IIC_ADDR);
     Wire.write(start_reg);
     Wire.endTransmission(false);
 
-    Wire.requestFrom(_IIC_ADDR,sizeof(u16));
-    while(sizeof(u16)!=Wire.available())
+    Wire.requestFrom(_IIC_ADDR,sizeof(uint16_t));
+    while(sizeof(uint16_t)!=Wire.available())
     {
         time_out_count++;
         if(time_out_count>10)  return ERROR_COMM;
         delay(1);
     }
     val=Wire.read();
-    *value|=(u16)val<<8;
+    *value|=(uint16_t)val<<8;
     val=Wire.read();
     *value|=val;
     return NO_ERROR;
@@ -188,10 +188,10 @@ HM330XErrorCode IIC_OPRTS::IIC_read_16bit(u8 start_reg,u16 *value)
  * @param data_len: The length of buf need to read in.
  * @return result of operation,non-zero if failed.
  */
-HM330XErrorCode IIC_OPRTS::IIC_read_bytes(u8 start_reg,u8 *data,u32 data_len)
+HM330XErrorCode IIC_OPRTS::IIC_read_bytes(uint8_t start_reg,uint8_t *data,uint32_t data_len)
 {
     HM330XErrorCode ret=NO_ERROR;
-    u32 time_out_count=0;
+    uint32_t time_out_count=0;
     Wire.beginTransmission(_IIC_ADDR);
     Wire.write(start_reg);
     Wire.endTransmission(false);
@@ -216,13 +216,13 @@ HM330XErrorCode IIC_OPRTS::IIC_read_bytes(u8 start_reg,u8 *data,u32 data_len)
  * @brief change the I2C address from default.
  * @param IIC_ADDR: I2C address to be set
  */
-void IIC_OPRTS::set_iic_addr(u8 IIC_ADDR)
+void IIC_OPRTS::set_iic_addr(uint8_t IIC_ADDR)
 {
     _IIC_ADDR=IIC_ADDR;
 }
 
 
-HM330XErrorCode IIC_OPRTS::IIC_SEND_CMD(u8 CMD)
+HM330XErrorCode IIC_OPRTS::IIC_SEND_CMD(uint8_t CMD)
 {
     int ret=0;
     Wire.beginTransmission(_IIC_ADDR);

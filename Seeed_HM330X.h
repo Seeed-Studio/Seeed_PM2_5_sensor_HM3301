@@ -43,18 +43,8 @@
                             return a;   \
                             }}while(0)
 
-#if defined(__AVR__)
-typedef long unsigned int u32;
-#endif
-typedef int s32;
-typedef unsigned char u8;
-typedef unsigned short u16;
-
 #define DEFAULT_IIC_ADDR  0x40
-
-
 #define SELECT_COMM_CMD    0X88
-
 
 typedef enum
 {
@@ -68,27 +58,27 @@ class IIC_OPRTS
 {
 public:
 
-    HM330XErrorCode IIC_write_byte(u8 reg,u8 byte);
-    HM330XErrorCode IIC_read_byte(u8 reg,u8* byte);
-    void set_iic_addr(u8 IIC_ADDR);
-    HM330XErrorCode IIC_read_16bit(u8 start_reg,u16 *value);
-    HM330XErrorCode IIC_write_16bit(u8 reg,u16 value);
+    HM330XErrorCode IIC_write_byte(uint8_t reg,uint8_t byte);
+    HM330XErrorCode IIC_read_byte(uint8_t reg,uint8_t* byte);
+    void set_iic_addr(uint8_t IIC_ADDR);
+    HM330XErrorCode IIC_read_16bit(uint8_t start_reg,uint16_t *value);
+    HM330XErrorCode IIC_write_16bit(uint8_t reg,uint16_t value);
 
-    HM330XErrorCode IIC_read_bytes(u8 start_reg,u8 *data,u32 data_len);
+    HM330XErrorCode IIC_read_bytes(uint8_t start_reg,uint8_t *data,uint32_t data_len);
 
-    HM330XErrorCode IIC_SEND_CMD(u8 CMD);
+    HM330XErrorCode IIC_SEND_CMD(uint8_t CMD);
 
 private:
-    u8 _IIC_ADDR;
+    uint8_t _IIC_ADDR;
 };
 
 class HM330X:public IIC_OPRTS
 {
 public:
-    HM330X(u8 IIC_ADDR=DEFAULT_IIC_ADDR);
+    HM330X(uint8_t IIC_ADDR=DEFAULT_IIC_ADDR);
     HM330XErrorCode init();
     HM330XErrorCode select_comm();
-    HM330XErrorCode read_sensor_value(u8 *data,u32 data_len);
+    HM330XErrorCode read_sensor_value(uint8_t *data,uint32_t data_len);
 private:
 
 };
