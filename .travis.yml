@@ -6,8 +6,21 @@ python:
 install:
   - pip install -U platformio
 
-script:
-  - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board nodemcuv2
-  - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board nanoatmega328
-  - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board nodemcu-32s
-  - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board d1_mini
+matrix:
+  fast_finish: true
+  include:
+    - env: BOARD=nodemcuv2
+      script:
+        - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board $BOARD
+    - env: BOARD=nanoatmega328
+      script:
+        - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board $BOARD
+    - env: BOARD=nodemcu-32s
+      script:
+        - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board $BOARD
+    - env: BOARD=d1_mini
+      script:
+        - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board $BOARD
+    - env: BOARD=sparkfun_samd21_mini_usb
+      script:
+        - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board $BOARD
