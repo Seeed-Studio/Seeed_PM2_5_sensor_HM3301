@@ -43,7 +43,7 @@
                             return a;   \
                             }}while(0)
 
-#if defined(__AVR__)
+#if defined(__AVR__) || (ARDUINO_SAMD_VARIANT_COMPLIANCE)
 typedef long unsigned int u32;
 #endif
 typedef int s32;
