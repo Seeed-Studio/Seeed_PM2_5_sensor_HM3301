@@ -26,3 +26,6 @@ matrix:
     - env: BOARD=sparkfun_samd21_dev_usb
       script:
         - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board $BOARD
+    - env: BOARD=zero
+      script:
+        - pio ci examples/basic_demo/basic_demo.ino --lib ./ --board $BOARD

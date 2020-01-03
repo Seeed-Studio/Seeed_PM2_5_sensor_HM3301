@@ -31,6 +31,12 @@
 
 #include <Seeed_HM330X.h>
 
+#ifdef  ARDUINO_SAMD_VARIANT_COMPLIANCE
+#define SERIAL_OUTPUT SerialUSB
+#else
+#define SERIAL_OUTPUT Serial
+#endif
+
 HM330X sensor;
 uint8_t buf[30];
 
@@ -47,8 +53,8 @@ HM330XErrorCode print_result(const char *str, uint16_t value) {
     if (NULL == str) {
         return ERROR_PARAM;
     }
-    Serial.print(str);
-    Serial.println(value);
+    SERIAL_OUTPUT.print(str);
+    SERIAL_OUTPUT.println(value);
     return NO_ERROR;
 }
 
@@ -71,10 +77,10 @@ HM330XErrorCode parse_result_value(uint8_t *data) {
         return ERROR_PARAM;
     }
     for (int i = 0; i < 28; i++) {
-        Serial.print(data[i], HEX);
-        Serial.print("  ");
+        SERIAL_OUTPUT.print(data[i], HEX);
+        SERIAL_OUTPUT.print("  ");
         if ((0 == (i) % 5) || (0 == i)) {
-            Serial.println("");
+            SERIAL_OUTPUT.println("");
         }
     }
     uint8_t sum = 0;
@@ -82,20 +88,20 @@ HM330XErrorCode parse_result_value(uint8_t *data) {
         sum += data[i];
     }
     if (sum != data[28]) {
-        Serial.println("wrong checkSum!!!!");
+        SERIAL_OUTPUT.println("wrong checkSum!!!!");
     }
-    Serial.println("");
+    SERIAL_OUTPUT.println("");
     return NO_ERROR;
 }
 
 
 /*30s*/
 void setup() {
-    Serial.begin(115200);
+    SERIAL_OUTPUT.begin(115200);
     delay(100);
-    Serial.println("Serial start");
+    SERIAL_OUTPUT.println("Serial start");
     if (sensor.init()) {
-        Serial.println("HM330X init failed!!!");
+        SERIAL_OUTPUT.println("HM330X init failed!!!");
         while (1);
     }
 
@@ -104,10 +110,10 @@ void setup() {
 
 void loop() {
     if (sensor.read_sensor_value(buf, 29)) {
-        Serial.println("HM330X read result failed!!!");
+        SERIAL_OUTPUT.println("HM330X read result failed!!!");
     }
     parse_result_value(buf);
     parse_result(buf);
-    Serial.println("");
+    SERIAL_OUTPUT.println("");
     delay(5000);
 }
