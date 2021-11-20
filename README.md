@@ -8,18 +8,18 @@ HM-3301 is a new generation of dust detection sensor based on laser theory intro
 
 
 ##  Introduction:  
-The HM-3301 is applicable to products and application fields such as dust detector, intelligent air purifier, intelligent air conditioner, intelligent ventilation fan, air quality detection, haze table, environment monitoring, etc.  
+The HM-3301 is applicable to products and application fields such as dust detectors, intelligent air purifiers, intelligent air conditioners, intelligent ventilation fans, air quality detection, haze table, environment monitoring, etc.
 
 
 
 ## Usage:  
-- Download all the source files and open one of example,compile,upload,and running.Open the corresponding Serial Port to watch the result.
--  Example: open the file examples/basic_demo/basic_demo.ino.This is the three-way test, which can measure the concentration content of three levels :PM1.0,PM2.5,PM10. 
+- Download all the source files and open one of examples, compile, upload, and run. Open the Serial Port and set the baud rate to **115200** to watch the result.
+-  Example: open the file examples/basic_demo/basic_demo.ino. This is the three-way test, which can measure the concentration content of three levels :PM1.0,PM2.5,PM10.
 
 ## Notice:
 
-- The sensor metal housing should not be short-circuited with other external panel circuits or product housing because the sensor housing is conducting with the internal power source.
-- When applying with purifier or fixed detection equipment, the position of sensor should be higher than 20cm above the ground.Otherwise, it is likely to be polluted by large dust particles or even floccules near the ground, resulting in the winding resistance of the fan.Refer to doc/HM-3300&3600datasheet.doc to get more detail.
+- The sensor metal housing should not be short-circuited with other external panel circuits or product housing because the sensor housing is conducting the internal power source.
+- When applying with purifier or fixed detection equipment, the position of the sensor should be higher than 20cm above the ground. Otherwise, it is likely to be polluted by large dust particles or even floccules near the ground, resulting in the winding resistance of the fan. Refer to doc/HM-3300&3600datasheet.doc for more details.
 
 
 
