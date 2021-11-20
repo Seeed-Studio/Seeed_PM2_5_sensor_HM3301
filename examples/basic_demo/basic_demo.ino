@@ -89,7 +89,7 @@ HM330XErrorCode parse_result_value(uint8_t* data) {
         sum += data[i];
     }
     if (sum != data[28]) {
-        SERIAL_OUTPUT.println("wrong checkSum!!!!");
+        SERIAL_OUTPUT.println("wrong checkSum!!");
     }
     SERIAL_OUTPUT.println("");
     return NO_ERROR;
@@ -102,7 +102,7 @@ void setup() {
     delay(100);
     SERIAL_OUTPUT.println("Serial start");
     if (sensor.init()) {
-        SERIAL_OUTPUT.println("HM330X init failed!!!");
+        SERIAL_OUTPUT.println("HM330X init failed!!");
         while (1);
     }
 
@@ -111,7 +111,7 @@ void setup() {
 
 void loop() {
     if (sensor.read_sensor_value(buf, 29)) {
-        SERIAL_OUTPUT.println("HM330X read result failed!!!");
+        SERIAL_OUTPUT.println("HM330X read result failed!!");
     }
     parse_result_value(buf);
     parse_result(buf);
