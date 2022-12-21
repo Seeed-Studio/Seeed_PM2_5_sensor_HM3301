@@ -6,7 +6,8 @@
     Website    : www.seeed.cc
     Author     : downey
     Create Time: August 2018
-    Change Log :
+    Change Log : 
+      21st December 2022 by Marcin Jahn - Make the `select_comm` method private
 
     The MIT License (MIT)
 
@@ -47,10 +48,10 @@ class HM330X : public I2COperations {
 
     HM330XErrorCode init();
 
-    HM330XErrorCode select_comm();
-
     HM330XErrorCode read_sensor_value(uint8_t* data, uint32_t data_len);
 
+  private:
+    HM330XErrorCode select_comm();
 };
 
 
